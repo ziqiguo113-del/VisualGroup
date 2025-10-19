@@ -1,0 +1,16 @@
+#include <iostream>
+#include<iomanip>
+#include<cmath>
+using namespace std;
+int main() {
+	int year;
+	cin >> year;
+	if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0)) {
+		cout << 1 << endl;
+		return 0;
+	}
+	else {
+		cout << 0 << endl;
+	}
+	return 0;
+}
