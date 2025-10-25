@@ -1,0 +1,18 @@
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+#include <iomanip> 
+using namespace std;
+int main() {
+    double s;
+    cin >> s;
+    int n = 1;
+    double s_left = s;
+    while ((2 * pow(0.98, n - 1)) < s_left) {
+        s_left -= 2 * pow(0.98, n - 1);
+        n += 1;
+    }
+        cout << n << endl;
+    
+    return 0;
+}
