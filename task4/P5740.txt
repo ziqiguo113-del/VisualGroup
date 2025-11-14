@@ -1,0 +1,34 @@
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+#include <iomanip> 
+#include <string>
+using namespace std;
+
+int main() {
+    int N;
+    cin >> N; 
+
+    string bestName;
+    int bestX = 0, bestY = 0, bestZ = 0;
+    int bestSum = -1; 
+
+    for (int i = 0; i < N; ++i) {
+        string name;
+        int x, y, z;
+        cin >> name >> x >> y >> z;
+
+        int sum = x + y + z;  
+        if (sum > bestSum) {  
+            bestSum = sum;
+            bestName = name;
+            bestX = x;
+            bestY = y;
+            bestZ = z;
+        }
+    }
+
+    cout << bestName << " " << bestX << " " << bestY << " " << bestZ << endl;
+
+    return 0;
+}

@@ -1,0 +1,28 @@
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+#include <iomanip> 
+#include <string>
+using namespace std;
+bool isprime(int n) {
+    if (n < 2) return false;
+    for (int i = 2; i * i <= n; ++i)
+        if (n % i == 0) return false;
+    return true;
+}
+
+int main() {
+    int N;
+    cin >> N; 
+    for (int even = 4; even <= N; even += 2) {
+        for (int i = 2; i <= even / 2; ++i) { 
+            int j = even - i;
+            if (isprime(i) && isprime(j)) {
+                cout << even << "=" << i << "+" << j << endl;
+                break; 
+            }
+        }
+    }
+
+    return 0;
+}

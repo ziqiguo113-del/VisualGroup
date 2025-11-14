@@ -1,0 +1,25 @@
+#include <iostream>
+#include <cmath>
+#include <algorithm>
+#include <iomanip> 
+#include <string>
+#include <vector>
+using namespace std;
+
+int main() {
+    vector<int> s; 
+    int num;
+    while (cin >> num) {
+        s.push_back(num); 
+    }
+
+    int n = s.size();  
+    long long sum = 0;
+    for (int i = 0; i < n; i++) {
+        sum += s[i];
+    }
+    long long result = sum * (1LL << (n - 1));
+    cout << result << endl;
+
+    return 0;
+}
